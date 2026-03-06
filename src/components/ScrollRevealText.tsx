@@ -35,7 +35,7 @@ export function ScrollRevealText({ text, className = '' }: ScrollRevealTextProps
     const containerRef = useRef<HTMLParagraphElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
-        offset: ['start 0.95', 'end 0.6'],
+        offset: ['start 0.95', 'end 0.55'],
     });
 
     const chars = text.split('');
@@ -43,9 +43,9 @@ export function ScrollRevealText({ text, className = '' }: ScrollRevealTextProps
     return (
         <p ref={containerRef} className={className}>
             {chars.map((char, i) => {
-                // Each char occupies a portion of 0–0.85 of total progress
-                const start = (i / chars.length) * 0.85;
-                const end = ((i + 1) / chars.length) * 0.85;
+                // Each char occupies a portion of the full 0–1 progress range
+                const start = i / chars.length;
+                const end = (i + 1) / chars.length;
 
                 return (
                     <Char key={i} progress={scrollYProgress} range={[start, end]}>
