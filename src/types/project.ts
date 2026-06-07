@@ -11,4 +11,5 @@ export interface Project {
   date?: string;
   tweetUrl?: string;
   isNew?: boolean;
+  isBlurred?: boolean;
 }

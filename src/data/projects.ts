@@ -2,6 +2,13 @@ import { Project } from '@/types/project'
 
 export const projects: Project[] = [
   {
+    id: "mavis",
+    title: "Mavis",
+    description: "Personal AI assistant on the strip",
+    tags: ["AI", "Assistant"],
+    isBlurred: true,
+  },
+  {
     id: "flowlock",
     title: "Flowlock",
     description: "A Life OS and a productivity tool",
@@ -37,21 +44,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "boredombuster",
-    title: "Boredom Buster",
-    description: "Curated sites to cure boredom",
-    longDescription: "Builder of this project\n\n**Boredom Buster** is an open-source website discovery platform designed to help users escape boredom through curated internet experiences tailored to different interests and moods. The app includes multiple modes such as Builder Mode for developers and CS students looking for coding tools, inspiration, and useful resources, alongside Student and Time Pass modes that surface entertaining, random, and interactive websites for learning, exploration, or simply passing time. With a simple interaction-based interface, users can instantly discover unique corners of the internet ranging from productivity tools and creative experiments to fun websites and engaging online experiences, making internet browsing more intentional, enjoyable, and accessible.",
-    liveLink: "https://iambbored.netlify.app",
-    githubLink: "https://github.com/Leadin-Vasanthkumar/Boredom-Buster.git",
-    video: "https://player.mux.com/thj8hKG6yq701gHz7gJJXB01l3BtLrXFGDV2T1yNR02meA",
-    image: "/images/boredombuster.png",
-    tags: [
-      "Next.js",
-      "Tailwind CSS",
-      "TypeScript"
-    ],
-  },
-  {
     id: "forus",
     title: "Forus",
     description: "Local music player, organize, play and manage offline music",
@@ -60,6 +52,21 @@ export const projects: Project[] = [
     githubLink: "https://github.com/Leadin-Vasanthkumar/forus.git",
     video: "https://player.mux.com/02yrvocR4cyQ01CJavzErf8pexH01f4puOm01Q00tUNTjjvE",
     image: "/images/forus.png",
+    tags: [
+      "Next.js",
+      "Tailwind CSS",
+      "TypeScript"
+    ],
+  },
+  {
+    id: "boredombuster",
+    title: "Boredom Buster",
+    description: "Curated sites to cure boredom",
+    longDescription: "Builder of this project\n\n**Boredom Buster** is an open-source website discovery platform designed to help users escape boredom through curated internet experiences tailored to different interests and moods. The app includes multiple modes such as Builder Mode for developers and CS students looking for coding tools, inspiration, and useful resources, alongside Student and Time Pass modes that surface entertaining, random, and interactive websites for learning, exploration, or simply passing time. With a simple interaction-based interface, users can instantly discover unique corners of the internet ranging from productivity tools and creative experiments to fun websites and engaging online experiences, making internet browsing more intentional, enjoyable, and accessible.",
+    liveLink: "https://iambbored.netlify.app",
+    githubLink: "https://github.com/Leadin-Vasanthkumar/Boredom-Buster.git",
+    video: "https://player.mux.com/thj8hKG6yq701gHz7gJJXB01l3BtLrXFGDV2T1yNR02meA",
+    image: "/images/boredombuster.png",
     tags: [
       "Next.js",
       "Tailwind CSS",

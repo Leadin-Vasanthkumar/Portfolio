@@ -100,7 +100,7 @@ export default function NewHeroSection() {
                     <h2 className="text-base sm:text-xl opacity-20 font-[family-name:var(--font-instrument-serif)]">Projects / Works</h2>
                   </div>
                   <div className="px-4">
-                    <MinimalProjectList projects={projects.slice(0, 6)} />
+                    <MinimalProjectList projects={projects.slice(0, 4)} />
                   </div>
                   <div className="px-4 flex justify-end mt-6 sm:mt-8 mb-4 sm:mb-6">
                     <Link
