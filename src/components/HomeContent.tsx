@@ -72,7 +72,8 @@ export default function NewHeroSection() {
               <Reveal delay={0.1}>
                 <ContentSection className="pb-6 sm:pb-8 pt-4 sm:pt-6 px-2 sm:px-0">
                   <ContentParagraph className="mb-4 text-base sm:text-lg">
-                    <span className="font-medium dark:text-white text-black">14, vibe-coding everything with AI, shipping in public.</span> Websites for startups and founders. Web apps that solve real productivity problems — usually ones I had myself. If I have the problem, I build the fix. 🙃
+                    <span className="font-medium dark:text-white text-black">14, vibe-coding the future with AI.</span>{' '}
+                    Building useful tools, sharing what I learn, and turning ideas into reality one project at a time.
                   </ContentParagraph>
 
                   {/* Spotify Player */}

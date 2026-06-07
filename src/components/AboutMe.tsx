@@ -46,9 +46,15 @@ export default function AboutMe() {
                     </h3>
 
                     {/* Bio */}
-                    <p className="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base leading-relaxed mb-6">
-                        I build from zero. I leverage free AI tools to prototype fast and ship stunning UIs. I run a web agency building high-end landing pages for startups, and I build productivity apps on the side. Vibe-coder by nature. Quick with it by design.
-                    </p>
+                    <div className="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base leading-relaxed mb-6 space-y-3">
+                        <p>
+                            <span className="font-semibold text-black dark:text-white">I build things that I wish existed.</span>{' '}
+                            Most of my projects start with a problem I&apos;ve personally faced—whether it&apos;s productivity, learning, automation, or AI workflows. I use modern AI tools to prototype quickly, validate ideas, and ship products in public.
+                        </p>
+                        <p>
+                            Currently, I&apos;m exploring AI agents, productivity systems, and developer tools while documenting the process and continuously improving my skills. My goal isn&apos;t just to learn technology—it&apos;s to create products that genuinely help people and solve real-world problems.
+                        </p>
+                    </div>
 
                     {/* Skills */}
                     <div>
