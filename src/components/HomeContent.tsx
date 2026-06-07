@@ -13,8 +13,6 @@ import TechStackMarquee from './TechStackMarquee'
 import { Reveal } from './Reveal'
 import { projects } from '@/data/projects'
 import MinimalProjectList from './MinimalProjectList'
-import { faqs } from '@/data/blogs'
-import { FAQCard } from './FAQCard'
 import GitHubActivity from './GitHubActivity'
 import AboutMe from './AboutMe'
 import SpotifyPlayer from './SpotifyPlayer'
@@ -137,10 +135,10 @@ export default function NewHeroSection() {
                     <h2 className="text-base sm:text-xl opacity-20 font-[family-name:var(--font-instrument-serif)]">Thoughts</h2>
                   </div>
                   <div className="px-4">
-                    <div className="space-y-0 group">
-                      {faqs.map((faq) => (
-                        <FAQCard key={faq.id} faq={faq} />
-                      ))}
+                    <div className="py-12 sm:py-16 flex justify-center items-center">
+                      <p className="text-xs sm:text-sm text-black/40 dark:text-white/40 italic font-[family-name:var(--font-hk-grotesk)]">
+                        Thinking rn...
+                      </p>
                     </div>
                   </div>
                 </div>

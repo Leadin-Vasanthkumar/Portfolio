@@ -2,7 +2,6 @@
 import { FaLinkedin, FaXTwitter, FaGithub, FaPaperclip } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import { Tooltip } from "./ui/tooltip-card";
-import { VisitorCount } from "./VisitorCount";
 
 interface ReachoutProps {
   title?: string
@@ -146,7 +145,6 @@ export default function Reachout({
               <p>Design & Developed by <span className="font-medium text-black/70 dark:text-white/70">Vasanth</span></p>
               <p>© 2026. All rights reserved.</p>
             </div>
-            <VisitorCount />
           </div>
         </div>
       </div>
