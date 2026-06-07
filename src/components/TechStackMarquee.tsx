@@ -5,35 +5,36 @@ import Image from "next/image";
 
 
 // Tech Stack Data
+// Tech Stack Data
 const techStack = [
-  // Languages
-  { name: "JavaScript", category: "language", icon: "/tech-icons/javascript.svg", color: "bg-gray-500" },
-  { name: "TypeScript", category: "language", icon: "/tech-icons/typescript.svg", color: "bg-gray-500" },
-  { name: "Java", category: "language", icon: "/tech-icons/java.svg", color: "bg-gray-500" },
-  { name: "Python", category: "language", icon: "/tech-icons/python.svg", color: "bg-gray-500" },
-  { name: "SQL", category: "language", icon: "/tech-icons/sql.svg", color: "bg-gray-500" },
+  // Core Languages
+  { name: "JavaScript", category: "language", icon: "/tech-icons/javascript.svg", color: "bg-yellow-500" },
+  { name: "TypeScript", category: "language", icon: "/tech-icons/typescript.svg", color: "bg-blue-600" },
+  { name: "Python", category: "language", icon: "/tech-icons/python.svg", color: "bg-blue-400" },
+  { name: "Java", category: "language", icon: "/tech-icons/java.svg", color: "bg-red-500" },
+  { name: "SQL", category: "language", icon: "/tech-icons/sql.svg", color: "bg-orange-500" },
   
   // Frameworks & Libraries
-  { name: "React.js", category: "framework", icon: "/tech-icons/react.svg", color: "bg-gray-500" },
-  { name: "Next.js", category: "framework", icon: "/tech-icons/nextjs.svg", color: "bg-gray-500" },
-  { name: "Express.js", category: "framework", icon: "/tech-icons/express.svg", color: "bg-gray-500" },
-  { name: "Node.js", category: "framework", icon: "/tech-icons/nodejs.svg", color: "bg-gray-500" },
-  { name: "FastAPI", category: "framework", icon: "/tech-icons/fastapi.svg", color: "bg-gray-500" },
-  { name: "Tailwind CSS", category: "framework", icon: "/tech-icons/tailwind.svg", color: "bg-gray-500" },
-  
-  // Databases & Tools
-  { name: "MongoDB", category: "database", icon: "/tech-icons/mongodb.svg", color: "bg-gray-500" },
-  { name: "PostgreSQL", category: "database", icon: "/tech-icons/postgresql.svg", color: "bg-gray-500" },
-  { name: "Redis", category: "database", icon: "/tech-icons/redis.svg", color: "bg-gray-500" },
-  
-  // Developer Tools
-  { name: "Git", category: "tool", icon: "/tech-icons/Git.svg", color: "bg-gray-500" },
-  { name: "Docker", category: "tool", icon: "/tech-icons/docker.svg", color: "bg-gray-500" },
-  { name: "Azure", category: "tool", icon: "/tech-icons/Azure.svg", color: "bg-gray-500" },
-  { name: "AWS", category: "tool", icon: "/tech-icons/AWS.svg", color: "bg-gray-500" },
-  { name: "Google Cloud", category: "tool", icon: "/tech-icons/gcp.svg", color: "bg-gray-500" },
-  { name: "Jira", category: "tool", icon: "/tech-icons/Jira.svg", color: "bg-gray-500" },
-  { name: "Nix OS", category: "tool", icon: "/tech-icons/NixOS.svg", color: "bg-gray-500" },
+  { name: "React.js", category: "framework", icon: "/tech-icons/react.svg", color: "bg-blue-300" },
+  { name: "Next.js", category: "framework", icon: "/tech-icons/nextjs.svg", color: "bg-black" },
+  { name: "Node.js", category: "framework", icon: "/tech-icons/nodejs.svg", color: "bg-green-600" },
+  { name: "Tailwind CSS", category: "framework", icon: "/tech-icons/tailwind.svg", color: "bg-sky-400" },
+
+  // Vibe Coding & AI Tools
+  { name: "Claude", category: "ai", icon: "/tech-icons/claude.webp", color: "bg-orange-700" },
+  { name: "Gemini", category: "ai", icon: "/tech-icons/gemini.png", color: "bg-blue-500" },
+  { name: "Lovable.dev", category: "tool", icon: "/tech-icons/lovable.png", color: "bg-purple-500" },
+  { name: "Cursor", category: "tool", icon: "/tech-icons/cursor.png", color: "bg-neutral-800" },
+  { name: "Figma", category: "design", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", color: "bg-fuchsia-500" },
+  { name: "Google AI Studio", category: "ai", icon: "/tech-icons/aistudio.png", color: "bg-blue-400" },
+  { name: "OpenRouter", category: "tool", icon: "/tech-icons/openrouter.png", color: "bg-neutral-900" },
+  { name: "Antigravity", category: "ai", icon: "/tech-icons/antigravity.png", color: "bg-violet-600" },
+  { name: "Code Rabbit", category: "tool", icon: "/tech-icons/coderabbit.png", color: "bg-orange-400" },
+  { name: "Supabase", category: "database", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/supabase/supabase-original.svg", color: "bg-emerald-500" },
+  { name: "Firebase", category: "database", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg", color: "bg-amber-500" },
+  { name: "Github", category: "tool", icon: "/tech-icons/github-new.png", color: "bg-zinc-800" },
+  { name: "Git", category: "tool", icon: "/tech-icons/Git.svg", color: "bg-orange-600" },
+  { name: "Docker", category: "tool", icon: "/tech-icons/docker.svg", color: "bg-sky-600" },
 ];
 
 interface TechIconProps {

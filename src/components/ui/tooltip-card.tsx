@@ -227,7 +227,7 @@ export const Tooltip = ({
               stiffness: 300,
               damping: 25,
             }}
-            className="pointer-events-none absolute z-[9999] max-w-[90vw] rounded-md shadow-sm shadow-black/5 dark:shadow-white/10"
+            className="pointer-events-none absolute z-[9999] max-w-[90vw] w-max rounded-md shadow-sm shadow-black/5 dark:shadow-white/10"
             style={{
               top: position.y,
               left: position.x,

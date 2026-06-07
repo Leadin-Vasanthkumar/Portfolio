@@ -14,10 +14,10 @@ interface SpotifyPlayerProps {
 
 export default function SpotifyPlayer({
     trackUrl = 'https://open.spotify.com/track/5VIDhfflRT4rT0TWpy9LXN',
-    albumArt = 'https://i.scdn.co/image/ab67616d00001e02283dc1c25ba3030b0030f1bc',
-    songName = 'Tum Prem Ho',
-    artists = 'Mohit Lalwani',
-    audioSrc = '/audio/TumPremHo.mp3'
+    albumArt = '/song-banner.jpg',
+    songName = 'Aatma Rama Ananda Ramana',
+    artists = 'Unknown',
+    audioSrc = '/song.mp3'
 }: SpotifyPlayerProps) {
     const [isPlaying, setIsPlaying] = useState(false)
     const [currentTime, setCurrentTime] = useState(0)

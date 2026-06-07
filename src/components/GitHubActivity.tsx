@@ -16,7 +16,7 @@ interface GitHubActivityProps {
     username?: string
 }
 
-export default function GitHubActivity({ username = 'Atharvsinh-codez' }: GitHubActivityProps) {
+export default function GitHubActivity({ username = 'Leadin-Vasanthkumar' }: GitHubActivityProps) {
     const [contributions, setContributions] = useState<ContributionWeek[]>([])
     const [totalContributions, setTotalContributions] = useState(0)
     const [loading, setLoading] = useState(true)
@@ -27,52 +27,45 @@ export default function GitHubActivity({ username = 'Atharvsinh-codez' }: GitHub
             try {
                 setLoading(true)
 
-                // Fetch contributions for 2025 and 2026
-                const [response2025, response2026] = await Promise.all([
-                    fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=2025`),
-                    fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=2026`)
+                const currentYear = new Date().getFullYear()
+                const prevYear = currentYear - 1
+
+                // Fetch data for current and previous year to get a full 12-month span
+                const [respCurr, respPrev] = await Promise.all([
+                    fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=${currentYear}`),
+                    fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=${prevYear}`)
                 ])
 
-                if (!response2025.ok || !response2026.ok) {
+                if (!respCurr.ok || !respPrev.ok) {
                     throw new Error('Failed to fetch contributions')
                 }
 
-                const data2025 = await response2025.json()
-                const data2026 = await response2026.json()
+                const dataCurr = await respCurr.json()
+                const dataPrev = await respPrev.json()
 
-                // Combine and filter: Feb 2025 to Jan 2026
-                const allContributions: { date: string; count: number; level: number }[] = []
+                // Combine all contributions
+                const allContributions = [...dataPrev.contributions, ...dataCurr.contributions]
+                
+                // Get the date 12 months ago from today
+                const today = new Date()
+                const twelveMonthsAgo = new Date()
+                twelveMonthsAgo.setFullYear(today.getFullYear() - 1)
+                twelveMonthsAgo.setDate(today.getDate() + 1) // Start from tomorrow 1 year ago to get exactly 365 days
 
-                // Add 2025 contributions from February onwards
-                if (data2025.contributions) {
-                    data2025.contributions.forEach((day: { date: string; count: number; level: number }) => {
-                        const date = new Date(day.date)
-                        if (date.getMonth() >= 1) { // February = 1
-                            allContributions.push(day)
-                        }
-                    })
-                }
-
-                // Add 2026 contributions (January only, up to current date)
-                if (data2026.contributions) {
-                    data2026.contributions.forEach((day: { date: string; count: number; level: number }) => {
-                        const date = new Date(day.date)
-                        if (date.getMonth() === 0) { // January = 0
-                            allContributions.push(day)
-                        }
-                    })
-                }
+                // Filter for the last 12 months
+                const lastYearContributions = allContributions.filter(day => {
+                    const date = new Date(day.date)
+                    return date >= twelveMonthsAgo && date <= today
+                })
 
                 const weeks: ContributionWeek[] = []
                 let currentWeek: ContributionDay[] = []
-                let total = 0
                 let isFirstDay = true
 
-                allContributions.forEach((day) => {
+                lastYearContributions.forEach((day: { date: string; count: number; level: number }) => {
                     const date = new Date(day.date)
                     const dayOfWeek = date.getDay()
 
-                    // For the first day, pad the week with empty days if it doesn't start on Sunday
                     if (isFirstDay && dayOfWeek !== 0) {
                         for (let i = 0; i < dayOfWeek; i++) {
                             currentWeek.push({
@@ -81,7 +74,6 @@ export default function GitHubActivity({ username = 'Atharvsinh-codez' }: GitHub
                                 level: 0
                             })
                         }
-                        isFirstDay = false
                     }
                     isFirstDay = false
 
@@ -95,16 +87,21 @@ export default function GitHubActivity({ username = 'Atharvsinh-codez' }: GitHub
                         count: day.count,
                         level: day.level
                     })
-
-                    total += day.count
                 })
 
                 if (currentWeek.length > 0) {
+                    while (currentWeek.length < 7) {
+                        currentWeek.push({
+                            date: '',
+                            count: 0,
+                            level: 0
+                        })
+                    }
                     weeks.push({ contributionDays: currentWeek })
                 }
 
                 setContributions(weeks)
-                setTotalContributions(total)
+                setTotalContributions(dataCurr.total[currentYear] + (dataPrev.total[prevYear] || 0))
                 setError(null)
             } catch (err) {
                 setError('Failed to load GitHub activity')

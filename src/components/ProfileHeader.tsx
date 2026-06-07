@@ -25,9 +25,8 @@ export default function ProfileHeader({
   title = "Developer • Builder • Web Dev",
   profileImage = "/pfp.jpg",
   socialLinks = {
-    twitter: "https://x.com/athrix_codes",
-    github: "https://github.com/Atharvsinh-codez",
-    linkedin: "https://www.linkedin.com/in/atharvsinh-jadav/",
+    twitter: "https://x.com/VasanthKumar_16",
+    github: "https://github.com/Leadin-Vasanthkumar",
   }
 }: ProfileHeaderProps) {
   const { theme, setTheme } = useTheme();
@@ -158,6 +157,7 @@ export default function ProfileHeader({
               </TooltipContent>
             </Tooltip>
           )}
+          
           {mounted && (
             <Tooltip>
               <TooltipTrigger asChild>
