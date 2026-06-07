@@ -24,7 +24,7 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   metadataBase: new URL('https://vasanth.me'),
   title: 'Vasanth Kumar',
-  description: '14-year-old developer building apps that solve real problems. Obsessed with productivity and clean UI.',
+  description: '14, vibe-coding the future with AI. Building useful tools, sharing what I learn, and turning ideas into reality one project at a time.',
   openGraph: {
     url: 'https://vasanth.me/',
     siteName: 'Vasanth Kumar Portfolio',
